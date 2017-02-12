@@ -6,6 +6,8 @@ RUN apt-get dist-upgrade -y
 RUN apt-get -y install build-essential python-imaging python-dev python-numpy git nginx imagemagick
 WORKDIR /overviewer
 RUN git clone https://github.com/overviewer/Minecraft-Overviewer.git /overviewer
+COPY display-land-ownership.patch /overviewer/
+RUN git apply display-land-ownership.patch
 RUN python setup.py build
 RUN chmod +x /overviewer/overviewer.py
 # Append "daemon off;" to the beginning of the configuration
