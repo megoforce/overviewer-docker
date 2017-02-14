@@ -19,7 +19,7 @@ EXPOSE 80
 # Set the default command to execute
 # when creating a new container
 RUN apt-get install -y wget
-RUN wget https://s3.amazonaws.com/Minecraft.Download/versions/1.10/1.10.jar -P ~/.minecraft/versions/1.10/
+RUN wget https://s3.amazonaws.com/Minecraft.Download/versions/1.11.2/1.11.2.jar -P ~/.minecraft/versions/1.11.2/
 
 RUN rm -rf /var/www/html/*
 COPY mini.py /overviewer/
